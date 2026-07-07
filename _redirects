@@ -1,0 +1,7 @@
+# Redirects from old Wix site URLs to preserve SEO rankings
+/about-5                      /clinical-cases.html    301
+/vcare-alpha                  /vcare.html             301
+/mecare-α                     /mecare.html            301
+/mecare-%CE%B1                /mecare.html            301
+/topclosure/rescue-military   /rescue-military.html   301
+/contact-us                   /contact.html           301
