@@ -1,3 +1,25 @@
+# Brand product domains: 301 to the matching product page on the primary domain
+https://topclosure.com/*        https://www.ivtmedical.com/topclosure.html      301!
+https://www.topclosure.com/*    https://www.ivtmedical.com/topclosure.html      301!
+http://topclosure.com/*         https://www.ivtmedical.com/topclosure.html      301!
+http://www.topclosure.com/*     https://www.ivtmedical.com/topclosure.html      301!
+https://vcarealpha.com/*        https://www.ivtmedical.com/vcare.html           301!
+https://www.vcarealpha.com/*    https://www.ivtmedical.com/vcare.html           301!
+http://vcarealpha.com/*         https://www.ivtmedical.com/vcare.html           301!
+http://www.vcarealpha.com/*     https://www.ivtmedical.com/vcare.html           301!
+https://mecarealpha.com/*       https://www.ivtmedical.com/mecare.html          301!
+https://www.mecarealpha.com/*   https://www.ivtmedical.com/mecare.html          301!
+http://mecarealpha.com/*        https://www.ivtmedical.com/mecare.html          301!
+http://www.mecarealpha.com/*    https://www.ivtmedical.com/mecare.html          301!
+https://topbioshield.com/*      https://www.ivtmedical.com/topbioshield.html    301!
+https://www.topbioshield.com/*  https://www.ivtmedical.com/topbioshield.html    301!
+http://topbioshield.com/*       https://www.ivtmedical.com/topbioshield.html    301!
+http://www.topbioshield.com/*   https://www.ivtmedical.com/topbioshield.html    301!
+
+# Legacy Wix multilingual subdomain
+https://en.ivtmedical.com/*     https://www.ivtmedical.com/:splat               301!
+http://en.ivtmedical.com/*      https://www.ivtmedical.com/:splat               301!
+
 # Redirects from old Wix site URLs to preserve SEO rankings
 /about-5                      /clinical-cases.html    301
 /vcare-alpha                  /vcare.html             301
