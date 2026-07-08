@@ -436,6 +436,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-chip { animation: none !important; }
 }
 
+/* ---------- WhatsApp floating button ---------- */
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 1500;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; display: grid; place-items: center;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, .45), 0 2px 8px rgba(0,0,0,.18);
+  transition: transform .2s, box-shadow .2s;
+}
+.wa-float:hover { transform: scale(1.09); box-shadow: 0 10px 30px rgba(37, 211, 102, .55); }
+.wa-float svg { width: 32px; height: 32px; fill: #fff; }
+@media (max-width: 760px) { .wa-float { right: 16px; bottom: 16px; width: 54px; height: 54px; } }
+
 /* Reveal on scroll */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.65,.3,1), transform .7s cubic-bezier(.2,.65,.3,1); }
 .reveal.visible { opacity: 1; transform: none; }
