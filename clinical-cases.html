@@ -44,6 +44,26 @@
     .lightbox img { max-width: 100%; max-height: 82vh; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
     .lightbox .cap { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: #fff; font-weight: 700; font-size: 15px; background: rgba(12,37,69,.75); padding: 8px 20px; border-radius: 99px; max-width: 90%; text-align: center; }
     @media (max-width: 860px) { .case-meta { grid-template-columns: 1fr; } .case-nav { top: 56px; } }
+
+    /* Before / During / After 3-stage comparison slider */
+    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 26px; }
+    @media (max-width: 900px) { .ba-grid { grid-template-columns: 1fr; } }
+    .ba-item h3 { font-size: 16.5px; margin: 14px 2px 3px; }
+    .ba-item .ba-cat { font-size: 12px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--mist); margin: 0 2px; }
+    .ba-slider { position: relative; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); user-select: none; touch-action: none; --p1: 33.4%; --p2: 66.7%; background: var(--navy-deep); }
+    .ba-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .ba-slider .ba-treat { clip-path: inset(0 0 0 var(--p1)); }
+    .ba-slider .ba-after { clip-path: inset(0 0 0 var(--p2)); }
+    .ba-handle { position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.5); cursor: ew-resize; }
+    .ba-handle.h1 { left: var(--p1); }
+    .ba-handle.h2 { left: var(--p2); }
+    .ba-handle::after { content: "◂▸"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 38px; height: 38px; border-radius: 50%; background: #fff; color: var(--navy); font-size: 12px; font-weight: 900; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.4); }
+    .ba-label { position: absolute; top: 10px; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 11px; border-radius: 99px; color: #fff; pointer-events: none; white-space: nowrap; }
+    .ba-label.before { left: 10px; background: rgba(185, 28, 28, .9); }
+    .ba-label.treat { left: calc((var(--p1) + var(--p2)) / 2); transform: translateX(-50%); background: rgba(12, 37, 69, .92); }
+    .ba-label.after { right: 10px; background: rgba(21, 128, 61, .9); }
+    .ba-slider:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+    .ba-hint { text-align: center; font-size: 13.5px; color: var(--mist); font-weight: 700; margin: 6px 0 30px; }
   </style>
 </head>
 <body>
@@ -82,6 +102,202 @@
       <a href="research.html">Research</a>
       <a href="contact.html" class="nav-cta">Contact Us</a>
     </nav>
+<!-- BEFORE / DURING / AFTER SHOWCASE -->
+<section class="section" id="before-after">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Real Patient Results</div>
+      <h2 class="section-title">Before. During. After.</h2>
+      <p class="section-lead">Thirteen real cases across every clinical application. The middle stage shows the wound managed with IVT Medical technology: TopClosure®, Vcare α® or MeCare α®.</p>
+    </div>
+    <p class="ba-hint">Drag the handles on each image to move between the three stages</p>
+    <div class="ba-grid">
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Large sarcoma resection, healed at 3 months">
+          <img loading="lazy" src="assets/img/cases/ba/ba01-before.jpg" alt="Before treatment: Large sarcoma resection, healed at 3 months">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba01-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba01-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Large sarcoma resection, healed at 3 months</h3>
+        <div class="ba-cat">Large Skin Defects</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Wide excision of malignant melanoma (back)">
+          <img loading="lazy" src="assets/img/cases/ba/ba02-before.jpg" alt="Before treatment: Wide excision of malignant melanoma (back)">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba02-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba02-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Wide excision of malignant melanoma (back)</h3>
+        <div class="ba-cat">Major Tumor Resection</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Giant defect, squamous cell carcinoma (flank)">
+          <img loading="lazy" src="assets/img/cases/ba/ba03-before.jpg" alt="Before treatment: Giant defect, squamous cell carcinoma (flank)">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba03-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba03-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Giant defect, squamous cell carcinoma (flank)</h3>
+        <div class="ba-cat">Major Tumor Resection</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Large scalp defect, pediatric patient">
+          <img loading="lazy" src="assets/img/cases/ba/ba04-before.jpg" alt="Before treatment: Large scalp defect, pediatric patient">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba04-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba04-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Large scalp defect, pediatric patient</h3>
+        <div class="ba-cat">Pediatric Patients</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Giant shoulder defect, closed within 2 hours">
+          <img loading="lazy" src="assets/img/cases/ba/ba05-before.jpg" alt="Before treatment: Giant shoulder defect, closed within 2 hours">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba05-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba05-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Giant shoulder defect, closed within 2 hours</h3>
+        <div class="ba-cat">Major Wound Defects</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Infected pacemaker, closure at 3 weeks">
+          <img loading="lazy" src="assets/img/cases/ba/ba06-before.jpg" alt="Before treatment: Infected pacemaker, closure at 3 weeks">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba06-treat.jpg" alt="During treatment with MeCare α® NPT">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba06-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">MeCare α® NPT</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Infected pacemaker, closure at 3 weeks</h3>
+        <div class="ba-cat">Infected Pacemaker</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Deep sternal wound infection, closed and healed">
+          <img loading="lazy" src="assets/img/cases/ba/ba07-before.jpg" alt="Before treatment: Deep sternal wound infection, closed and healed">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba07-treat.jpg" alt="During treatment with Vcare α® NPT">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba07-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">Vcare α® NPT</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Deep sternal wound infection, closed and healed</h3>
+        <div class="ba-cat">Deep Sternal Wounds</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Hand trauma reconstruction">
+          <img loading="lazy" src="assets/img/cases/ba/ba08-before.jpg" alt="Before treatment: Hand trauma reconstruction">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba08-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba08-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Hand trauma reconstruction</h3>
+        <div class="ba-cat">Hand Surgeries</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Severe leg wound">
+          <img loading="lazy" src="assets/img/cases/ba/ba09-before.jpg" alt="Before treatment: Severe leg wound">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba09-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba09-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Severe leg wound</h3>
+        <div class="ba-cat">Vascular Surgery</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Diabetic foot ulcer, healed">
+          <img loading="lazy" src="assets/img/cases/ba/ba10-before.jpg" alt="Before treatment: Diabetic foot ulcer, healed">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba10-treat.jpg" alt="During treatment with NPT">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba10-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">NPT</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Diabetic foot ulcer, healed</h3>
+        <div class="ba-cat">Diabetic Foot</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Crush-degloving forearm injury">
+          <img loading="lazy" src="assets/img/cases/ba/ba11-before.jpg" alt="Before treatment: Crush-degloving forearm injury">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba11-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba11-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Crush-degloving forearm injury</h3>
+        <div class="ba-cat">Orthopedic & Trauma</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Bone infection, limb salvage at 2.5 months">
+          <img loading="lazy" src="assets/img/cases/ba/ba12-before.jpg" alt="Before treatment: Bone infection, limb salvage at 2.5 months">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba12-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba12-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Bone infection, limb salvage at 2.5 months</h3>
+        <div class="ba-cat">Orthopedic & Trauma</div>
+      </div>
+      <div class="ba-item reveal">
+        <div class="ba-slider" tabindex="0" role="group" aria-label="Before, during and after comparison: Combat leg injury, healed at 8 weeks">
+          <img loading="lazy" src="assets/img/cases/ba/ba13-before.jpg" alt="Before treatment: Combat leg injury, healed at 8 weeks">
+          <img loading="lazy" class="ba-treat" src="assets/img/cases/ba/ba13-treat.jpg" alt="During treatment with TopClosure®">
+          <img loading="lazy" class="ba-after" src="assets/img/cases/ba/ba13-after.jpg" alt="After treatment: healed">
+          <div class="ba-handle h1" data-h="1"></div>
+          <div class="ba-handle h2" data-h="2"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label treat">TopClosure®</span>
+          <span class="ba-label after">After</span>
+        </div>
+        <h3>Combat leg injury, healed at 8 weeks</h3>
+        <div class="ba-cat">Combat Injuries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
   </div>
 </header>
 
@@ -102,6 +318,7 @@
 
 <nav class="case-nav">
   <div class="container row">
+    <a href="#before-after" style="border-color:var(--red); color:var(--red)">✦ Before / After</a>
     <a href="#case-1">01 · Large Skin Defect</a>
     <a href="#case-2">02 · Implant Salvage</a>
     <a href="#case-3">03 · Sternal Infection (DSWI)</a>
@@ -336,6 +553,31 @@ document.querySelectorAll('.case-strip figure').forEach(fig => {
 });
 lb.addEventListener('click', () => lb.classList.remove('open'));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+// Three-stage before/during/after sliders
+document.querySelectorAll('.ba-slider').forEach(sl => {
+  let active = null;
+  const get = v => parseFloat(sl.style.getPropertyValue(v)) || (v === '--p1' ? 33.4 : 66.7);
+  const setP = (which, val) => {
+    const p1 = get('--p1'), p2 = get('--p2');
+    if (which === 1) sl.style.setProperty('--p1', Math.max(2, Math.min(p2 - 6, val)) + '%');
+    else sl.style.setProperty('--p2', Math.min(98, Math.max(p1 + 6, val)) + '%');
+  };
+  const pct = x => ((x - sl.getBoundingClientRect().left) / sl.getBoundingClientRect().width) * 100;
+  sl.addEventListener('pointerdown', e => {
+    const p = pct(e.clientX);
+    active = Math.abs(p - get('--p1')) <= Math.abs(p - get('--p2')) ? 1 : 2;
+    sl.setPointerCapture(e.pointerId);
+    setP(active, p);
+  });
+  sl.addEventListener('pointermove', e => { if (e.buttons && active) setP(active, pct(e.clientX)); });
+  sl.addEventListener('pointerup', () => { active = null; });
+  sl.addEventListener('keydown', e => {
+    const which = e.shiftKey ? 2 : 1;
+    const cur = get(which === 1 ? '--p1' : '--p2');
+    if (e.key === 'ArrowLeft') { e.preventDefault(); setP(which, cur - 4); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); setP(which, cur + 4); }
+  });
+});
 </script>
 </body>
 </html>
