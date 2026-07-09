@@ -478,8 +478,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     flex-direction: column; justify-content: center; gap: 10px;
     opacity: 0; visibility: hidden; transition: opacity .25s;
     z-index: 1100;
+    /* closed menu must never intercept taps: the drop-panel re-enables visibility,
+       leaving invisible but clickable links floating over the page */
+    pointer-events: none;
   }
-  .nav.open { opacity: 1; visibility: visible; }
+  .nav.open { opacity: 1; visibility: visible; pointer-events: auto; }
   .nav a { font-size: 19px; }
   .nav a.nav-cta { margin-left: 0; }
   .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; text-align: center; min-width: 0; background: transparent; }

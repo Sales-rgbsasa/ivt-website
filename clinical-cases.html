@@ -570,13 +570,15 @@ document.querySelectorAll('.ba-slider').forEach(sl => {
   };
   const pct = x => ((x - sl.getBoundingClientRect().left) / sl.getBoundingClientRect().width) * 100;
   sl.addEventListener('pointerdown', e => {
+    e.preventDefault();
     const p = pct(e.clientX);
     active = Math.abs(p - get('--p1')) <= Math.abs(p - get('--p2')) ? 1 : 2;
     sl.setPointerCapture(e.pointerId);
     setP(active, p);
   });
-  sl.addEventListener('pointermove', e => { if (e.buttons && active) setP(active, pct(e.clientX)); });
+  sl.addEventListener('pointermove', e => { if (active !== null) setP(active, pct(e.clientX)); });
   sl.addEventListener('pointerup', () => { active = null; });
+  sl.addEventListener('pointercancel', () => { active = null; });
   sl.addEventListener('keydown', e => {
     const which = e.shiftKey ? 2 : 1;
     const cur = get(which === 1 ? '--p1' : '--p2');
