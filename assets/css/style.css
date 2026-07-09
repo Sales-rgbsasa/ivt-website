@@ -100,8 +100,8 @@ h1, h2, h3, h4 { line-height: 1.15; color: var(--navy); font-weight: 800; letter
 .site-header.scrolled .nav a:hover { background: rgba(12, 37, 69, .07); }
 .site-header.scrolled .nav a.active { color: var(--red); }
 .site-header.scrolled .nav a.nav-cta, .nav.open a.nav-cta { color: #fff; }
-.nav.open a { color: var(--navy); }
-.nav.open a.active { color: var(--red); }
+.nav.open a, .site-header.scrolled .nav.open a { color: #fff; }
+.nav.open a.active, .site-header.scrolled .nav.open a.active { color: var(--orange); }
 
 /* Dropdown */
 .nav-drop { position: relative; }
@@ -115,8 +115,11 @@ h1, h2, h3, h4 { line-height: 1.15; color: var(--navy); font-weight: 800; letter
 .nav-drop:hover .drop-panel, .nav-drop:focus-within .drop-panel {
   opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
 }
-.drop-panel a, .site-header.scrolled .drop-panel a { display: block; padding: 10px 14px; border-radius: 10px; font-size: 14.5px; color: var(--navy); }
-.drop-panel a:hover { background: var(--paper); }
+.drop-panel a { display: block; padding: 10px 14px; border-radius: 10px; font-size: 14.5px; }
+@media (min-width: 761px) {
+  .drop-panel a, .site-header.scrolled .drop-panel a { color: var(--navy); }
+  .drop-panel a:hover { background: var(--paper); }
+}
 .drop-panel a small { display: block; font-weight: 600; color: var(--mist); font-size: 12.5px; }
 
 /* Burger */
@@ -467,8 +470,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 @media (max-width: 760px) {
+  /* backdrop-filter on the header traps the fixed menu inside it; use a solid background instead on mobile */
+  .site-header.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255, 255, 255, .98); }
   .nav {
-    position: fixed; inset: 0; background: rgba(255,255,255,.98);
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(700px 400px at 80% 0%, #1d4275 0%, transparent 60%), var(--navy-deep);
     flex-direction: column; justify-content: center; gap: 10px;
     opacity: 0; visibility: hidden; transition: opacity .25s;
     z-index: 1100;
@@ -476,9 +482,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nav.open { opacity: 1; visibility: visible; }
   .nav a { font-size: 19px; }
   .nav a.nav-cta { margin-left: 0; }
-  .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; text-align: center; min-width: 0; }
+  .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; text-align: center; min-width: 0; background: transparent; }
+  .nav.open .drop-panel a, .site-header.scrolled .nav.open .drop-panel a { color: #fff !important; }
+  .nav.open .drop-panel a small { color: #8fa5c2 !important; }
   .nav-drop > a { display: none; }
   .burger { display: flex; }
+  .burger.open span { background: #fff; }
   .grid-3, .grid-2, .gallery-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .band { padding: 48px 30px; }
