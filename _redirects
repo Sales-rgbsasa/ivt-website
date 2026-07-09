@@ -29,15 +29,15 @@ http://en.ivtmedical.com/*      https://www.ivtmedical.com/:splat               
 /contact-us                   /contact           301
 
 # Clean URLs: old .html addresses permanently moved
-/topclosure.html   /topclosure   301
-/vcare.html   /vcare   301
-/mecare.html   /mecare   301
-/topbioshield.html   /topbioshield   301
-/rescue-military.html   /rescue-military   301
-/military-research.html   /military-research   301
-/clinical-cases.html   /clinical-cases   301
-/research.html   /research   301
-/contact.html   /contact   301
-/thank-you.html   /thank-you   301
-/accessibility.html   /accessibility   301
-/privacy.html   /privacy   301
+/topclosure.html   /topclosure   301!
+/vcare.html   /vcare   301!
+/mecare.html   /mecare   301!
+/topbioshield.html   /topbioshield   301!
+/rescue-military.html   /rescue-military   301!
+/military-research.html   /military-research   301!
+/clinical-cases.html   /clinical-cases   301!
+/research.html   /research   301!
+/contact.html   /contact   301!
+/thank-you.html   /thank-you   301!
+/accessibility.html   /accessibility   301!
+/privacy.html   /privacy   301!
