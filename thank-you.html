@@ -15,6 +15,24 @@
   <meta property="og:url" content="https://www.ivtmedical.com/thank-you">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y4CPHRTG0F');
+    // Lead conversion: fired once per form submission (this page is only reachable after a form POST)
+    (function () {
+      var source = 'unknown';
+      try {
+        var refPath = new URL(document.referrer).pathname;
+        if (refPath.indexOf('distributors') !== -1) source = 'distributor_form';
+        else if (refPath.indexOf('contact') !== -1) source = 'contact_form';
+      } catch (e) {}
+      gtag('event', 'generate_lead', { lead_source: source });
+    })();
+  </script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
