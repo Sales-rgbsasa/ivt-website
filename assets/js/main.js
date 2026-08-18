@@ -93,3 +93,11 @@ if (gate) {
     });
   }
 }
+
+// Mark genuine form submissions so the thank-you page counts a lead exactly once.
+// Direct visits, reloads and back-button entries to /thank-you set no flag and fire no event.
+document.querySelectorAll('form[method="POST"][name]').forEach((form) => {
+  form.addEventListener('submit', () => {
+    try { sessionStorage.setItem('ivt-lead-source', form.getAttribute('name') + '_form'); } catch (e) {}
+  });
+});

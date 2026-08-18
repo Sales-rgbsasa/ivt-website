@@ -22,15 +22,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
-    // Lead conversion: fired once per form submission (this page is only reachable after a form POST)
+    // Lead conversion: fires only when a submit flag was set by the form's submit event
+    // (see main.js), then clears it. Direct visits and reloads fire nothing.
     (function () {
-      var source = 'unknown';
+      var source = null;
       try {
-        var refPath = new URL(document.referrer).pathname;
-        if (refPath.indexOf('distributors') !== -1) source = 'distributor_form';
-        else if (refPath.indexOf('contact') !== -1) source = 'contact_form';
+        source = sessionStorage.getItem('ivt-lead-source');
+        sessionStorage.removeItem('ivt-lead-source');
       } catch (e) {}
-      gtag('event', 'generate_lead', { lead_source: source });
+      if (source) gtag('event', 'generate_lead', { lead_source: source });
     })();
   </script>
 </head>
