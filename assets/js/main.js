@@ -101,3 +101,30 @@ document.querySelectorAll('form[method="POST"][name]').forEach((form) => {
     try { sessionStorage.setItem('ivt-lead-source', form.getAttribute('name') + '_form'); } catch (e) {}
   });
 });
+
+// Count-up animation for stat numbers (respects prefers-reduced-motion)
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const nums = document.querySelectorAll('.stat .num span');
+  if (!nums.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      const m = el.textContent.match(/^(\d+)(.*)$/);
+      if (!m) return; // leaves non-numeric values like the infinity sign untouched
+      const target = parseInt(m[1], 10);
+      const suffix = m[2];
+      const dur = 900;
+      const t0 = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }, { threshold: 0.4 });
+  nums.forEach((el) => io.observe(el));
+})();

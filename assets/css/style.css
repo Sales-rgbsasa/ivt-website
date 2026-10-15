@@ -499,3 +499,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-chip { display: none; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Micro-interactions ---------- */
+.hero-chip.chip-2 { animation-duration: 6.4s; animation-delay: 1.1s; }
+.card .ic { transition: transform .25s; }
+.card:hover .ic { transform: rotate(-6deg) scale(1.08); }
+.split-media img { transition: transform .45s ease; }
+.split-media:hover img { transform: scale(1.02); }
+@media (min-width: 761px) {
+  .nav > a:not(.nav-cta), .nav-drop > a { position: relative; }
+  .nav > a:not(.nav-cta)::after, .nav-drop > a::after {
+    content: ""; position: absolute; left: 14px; right: 14px; bottom: 5px; height: 2px;
+    border-radius: 2px; background: var(--grad-brand);
+    transform: scaleX(0); transform-origin: center; transition: transform .25s;
+  }
+  .nav > a:not(.nav-cta):hover::after, .nav-drop > a:hover::after,
+  .nav > a.active:not(.nav-cta)::after, .nav-drop > a.active::after { transform: scaleX(1); }
+}
