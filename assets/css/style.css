@@ -516,3 +516,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nav > a:not(.nav-cta):hover::after, .nav-drop > a:hover::after,
   .nav > a.active:not(.nav-cta)::after, .nav-drop > a.active::after { transform: scaleX(1); }
 }
+
+/* A long <option> gives the select a wide minimum content size, which forces
+   horizontal overflow on narrow screens; let form controls shrink with their grid cell */
+.form-field { min-width: 0; }
+.form-field input, .form-field textarea, .form-field select { width: 100%; min-width: 0; box-sizing: border-box; }
