@@ -116,11 +116,11 @@ document.querySelectorAll('form[method="POST"][name]').forEach((form) => {
       if (!m) return; // leaves non-numeric values like the infinity sign untouched
       const target = parseInt(m[1], 10);
       const suffix = m[2];
-      const dur = 900;
+      const dur = 2300;
       const t0 = performance.now();
       (function tick(now) {
         const p = Math.min((now - t0) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
+        const eased = 1 - Math.pow(1 - p, 2);
         el.textContent = Math.round(target * eased) + suffix;
         if (p < 1) requestAnimationFrame(tick);
       })(t0);
