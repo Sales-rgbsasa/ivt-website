@@ -1,6 +1,6 @@
 /* ============================================================
    IVT Medical Ltd. — Design System
-   Brand: navy #0c2545 | red #e1251b | orange #f47b20 | green #36a44b
+   Brand: navy #0c2545 | red #e1251b | crimson accent #ff4d42 | green #36a44b
    ============================================================ */
 
 :root {
@@ -8,7 +8,7 @@
   --navy-deep: #071a33;
   --navy-soft: #16345e;
   --red: #e1251b;
-  --orange: #f47b20;
+  --orange: #ff4d42; /* crimson accent; variable name kept for compatibility */
   --green: #36a44b;
   --ink: #1a2437;
   --slate: #4d5b73;
@@ -17,7 +17,7 @@
   --paper: #f6f8fb;
   --paper-2: #eef2f8;
   --white: #ffffff;
-  --grad-brand: linear-gradient(100deg, var(--red) 0%, var(--orange) 100%);
+  --grad-brand: linear-gradient(100deg, #b01205 0%, var(--red) 100%);
   --radius: 18px;
   --radius-sm: 12px;
   --shadow-sm: 0 1px 2px rgba(12, 37, 69, .06), 0 4px 12px rgba(12, 37, 69, .06);
