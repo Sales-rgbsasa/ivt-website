@@ -4,24 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research & Publications | IVT Medical</title>
-  <meta name="description" content="Peer-reviewed research, media articles and scientific publications on IVT Medical technologies, TopClosure®, Vcare α® ROINPT and the CITA methodology.">
+  <meta name="description" content="Peer-reviewed research and scientific publications on IVT Medical technologies: TopClosure®, regulated negative pressure therapy, and the investigational ROI-NPT and CITA methods.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://www.ivtmedical.com/research">
   <meta property="og:title" content="Research & Publications | IVT Medical">
-  <meta property="og:description" content="Peer-reviewed research, media articles and scientific publications on IVT Medical technologies, TopClosure®, Vcare α® ROINPT and the CITA methodology.">
+  <meta property="og:description" content="Peer-reviewed research and scientific publications on IVT Medical technologies: TopClosure®, regulated negative pressure therapy, and the investigational ROI-NPT and CITA methods.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.ivtmedical.com/research">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <!-- Google tag (gtag.js): loads only after analytics consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
+    window.ivtLoadGA = function () {
+      if (window.ivtGALoaded) return;
+      window.ivtGALoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F';
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('ivt-analytics-consent') === 'granted') window.ivtLoadGA(); } catch (e) {}
   </script>
 </head>
 <body>
@@ -56,9 +64,15 @@
     <div class="breadcrumb"><a href="/">Home</a> / <span>Research</span></div>
     <div class="eyebrow">Evidence-Based Innovation</div>
     <h1>Research &amp; publications</h1>
-    <p>Peer-reviewed research, news articles and testimonials highlighting the effectiveness and impact of our technologies in wound closure and infection prevention.</p>
+    <p>Peer-reviewed research, news articles and scientific publications on our technologies in wound closure and wound therapy.</p>
   </div>
 </section>
+
+<div class="container" style="max-width:980px; margin-top:28px">
+  <div style="background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:18px 22px; font-size:13.5px; line-height:1.65; color:var(--slate)">
+    <strong style="color:var(--navy)">Scientific information notice:</strong> the publications on this page are provided as scientific information for healthcare professionals. Some describe investigational methods, including regulated oxygen-enriched negative pressure treatment (ROI-NPT) and targeted in-situ antibiotic administration (CITA), which are not FDA-cleared indications of any IVT Medical device; their safety and effectiveness for those uses have not been established. The FDA-cleared indication of Vcare α® (K121817) and MeCare α® (K260426) is regulated negative pressure wound therapy for wound management in professional healthcare facilities. Authors of several publications include Prof. Moris Topaz, the inventor of these technologies, who is the CEO and a shareholder of IVT Medical Ltd.
+  </div>
+</div>
 
 <section class="section">
   <div class="container">

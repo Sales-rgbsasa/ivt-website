@@ -65,13 +65,21 @@
     .ba-slider:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
     .ba-hint { text-align: center; font-size: 13.5px; color: var(--mist); font-weight: 700; margin: 6px 0 30px; }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <!-- Google tag (gtag.js): loads only after analytics consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
+    window.ivtLoadGA = function () {
+      if (window.ivtGALoaded) return;
+      window.ivtGALoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F';
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('ivt-analytics-consent') === 'granted') window.ivtLoadGA(); } catch (e) {}
   </script>
 </head>
 <body>

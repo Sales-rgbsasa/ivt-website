@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IVT Medical Ltd. | Advanced Wound Closure & Infection Control</title>
-  <meta name="description" content="IVT Medical develops advanced medical devices for wound healing and closure: TopClosure® Tension Relief System, Vcare α® and MeCare α® regulated negative pressure therapy, and the CITA antibiotic delivery methodology.">
+  <meta name="description" content="IVT Medical develops advanced medical devices for wound healing and closure: the TopClosure® Tension Relief System and the FDA-cleared Vcare α® and MeCare α® regulated negative pressure therapy devices.">
   <meta property="og:title" content="IVT Medical Ltd. | Advanced Wound Closure & Infection Control">
-  <meta property="og:description" content="Pioneering R&D in wound closure, regulated negative pressure therapy and targeted antibiotic delivery.">
+  <meta property="og:description" content="Pioneering R&D in wound closure and regulated negative pressure therapy, backed by 35+ peer-reviewed publications.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +15,21 @@
   <meta property="og:url" content="https://www.ivtmedical.com/">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <!-- Google tag (gtag.js): loads only after analytics consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
+    window.ivtLoadGA = function () {
+      if (window.ivtGALoaded) return;
+      window.ivtGALoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F';
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('ivt-analytics-consent') === 'granted') window.ivtLoadGA(); } catch (e) {}
   </script>
 </head>
 <body>
@@ -75,7 +83,7 @@
     <div class="hero-stats">
       <div class="stat reveal"><div class="num"><span>3</span></div><div class="lbl">Core proprietary technologies</div></div>
       <div class="stat reveal reveal-d1"><div class="num"><span>30+</span></div><div class="lbl">Peer-reviewed publications</div></div>
-      <div class="stat reveal reveal-d2"><div class="num"><span>15+</span></div><div class="lbl">Years of clinical research behind CITA</div></div>
+      <div class="stat reveal reveal-d2"><div class="num"><span>15+</span></div><div class="lbl">Years of published wound care research</div></div>
       <div class="stat reveal reveal-d3"><div class="num"><span>∞</span></div><div class="lbl">Civil, military &amp; mass-casualty settings</div></div>
     </div>
     <div class="reveal" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:34px">
@@ -92,7 +100,7 @@
     <div class="section-head center reveal">
       <div class="eyebrow">Technological Innovations</div>
       <h2 class="section-title">Three technologies. One integrated approach.</h2>
-      <p class="section-lead">Used together, TopClosure®, regulated negative pressure therapy and CITA introduce a groundbreaking approach to wound management, with the potential to redefine early wound closure across a spectrum of surgical applications.</p>
+      <p class="section-lead">TopClosure® and regulated negative pressure therapy work together as an integrated approach to early wound closure, built on decades of clinical practice, peer-reviewed research and FDA-cleared devices.</p>
     </div>
     <div class="grid-3">
       <div class="card reveal">
@@ -101,14 +109,14 @@
         <p>The Tension Relief System leverages stress relaxation and mechanical creep to harness the skin's viscoelastic properties, ensuring optimal tension management and enhanced closure of high-tension, difficult-to-heal wounds.</p>
       </div>
       <div class="card reveal reveal-d1">
-        <div class="ic">O₂</div>
-        <h3>ROINPT</h3>
-        <p>Regulated Oxygen-Enriched and Irrigation-Negative Pressure-Assisted Wound Treatment integrates oxygen to combat anaerobic infections while providing hydrodynamic wound cleansing that enhances the healing process. A patented IVT Medical technology.</p>
+        <div class="ic">⇣</div>
+        <h3>RNPT</h3>
+        <p>Regulated Negative Pressure Therapy delivers pre-set, controlled negative pressure for removal of exudates and infectious materials, with the FDA-cleared Vcare α® and MeCare α® devices and a patented bleeding control system.</p>
       </div>
       <div class="card reveal reveal-d2">
-        <div class="ic">✚</div>
-        <h3>CITA</h3>
-        <p>Controlled In-Situ Targeted Ultra-High Concentration Antibiotic Administration revolutionizes antimicrobial delivery, combating localized, resistant infections by delivering antibiotics directly at ultra-high concentrations.</p>
+        <div class="ic">🔬</div>
+        <h3>Research Programs</h3>
+        <p>An active, peer-reviewed research program in advanced wound therapy methods, including ROI-NPT and CITA. These investigational methods are published in leading journals and presented to the scientific community. <a href="/research" style="color:var(--red); font-weight:800">Explore the research →</a></p>
       </div>
     </div>
   </div>
@@ -151,21 +159,21 @@
   </div>
 </section>
 
-<!-- CITA SPOTLIGHT -->
+<!-- RESEARCH SPOTLIGHT -->
 <section class="section">
   <div class="container split">
-    <div class="split-media reveal"><img src="assets/img/cita-illustration.jpg" alt="CITA, targeted antibiotic delivery to an implanted device pocket"></div>
+    <div class="split-media reveal"><img src="assets/img/cita-illustration.jpg" alt="Illustration from IVT Medical's published research on targeted in-situ antibiotic administration (CITA)"></div>
     <div class="reveal reveal-d1">
-      <div class="eyebrow">The CITA Methodology</div>
-      <h2>Ultra-high concentration antibiotics, delivered exactly where they're needed</h2>
-      <p>Spearheaded by our CEO, Moris Topaz, MD, PhD, the CITA methodology evolved from over 15 years of rigorous basic science and clinical research. It enables direct delivery of antibiotics to the infection site at ultra-high concentrations, aiming to overcome resistance mechanisms and maximize treatment efficacy.</p>
+      <div class="eyebrow">Published Research</div>
+      <h2>Science first: from the lab to leading journals</h2>
+      <p>Led by our founder and CEO, Prof. Moris Topaz, MD, PhD, IVT Medical has built its technologies on more than 15 years of basic science and clinical research. The company's investigational methods, including regulated oxygen-enriched negative pressure treatment (ROI-NPT) and targeted in-situ antibiotic administration (CITA), are the subject of studies published in peer-reviewed journals, including JACC.</p>
       <ul class="checklist">
-        <li>Direct in-situ administration via local instillation or catheter-based delivery</li>
-        <li>Minimizes systemic antibiotic exposure and potential side effects</li>
-        <li>Effective against biofilms and high bacterial loads that conventional methods cannot address</li>
-        <li>Published in leading journals including JACC</li>
+        <li>35+ peer-reviewed publications across wound closure and wound therapy</li>
+        <li>A NICE medtech innovation briefing in the UK (TopClosure®, MIB97)</li>
+        <li>Research presented at international scientific meetings</li>
       </ul>
-      <a href="/research" class="btn btn-dark" style="margin-top:22px">See the Evidence <span class="arrow">→</span></a>
+      <p style="font-size:13px; color:var(--mist); margin-top:14px">ROI-NPT and CITA are investigational methods. They are not FDA-cleared indications of any IVT Medical device, and their safety and effectiveness for those uses have not been established.</p>
+      <a href="/research" class="btn btn-dark" style="margin-top:14px">Research &amp; Publications <span class="arrow">→</span></a>
     </div>
   </div>
 </section>

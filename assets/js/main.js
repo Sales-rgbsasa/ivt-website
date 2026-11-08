@@ -128,3 +128,44 @@ document.querySelectorAll('form[method="POST"][name]').forEach((form) => {
   }, { threshold: 0.4 });
   nums.forEach((el) => io.observe(el));
 })();
+
+// Analytics consent banner: Google Analytics loads only after the visitor accepts.
+// Cloudflare Web Analytics is cookieless and unaffected.
+(function () {
+  var KEY = 'ivt-analytics-consent';
+  function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return 'denied'; } }
+  function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function showBanner() {
+    if (document.getElementById('cookie-banner')) return;
+    var b = document.createElement('div');
+    b.id = 'cookie-banner';
+    b.setAttribute('role', 'dialog');
+    b.setAttribute('aria-label', 'Cookie consent');
+    b.innerHTML = '<p>We use analytics cookies to understand how this website is used. See our <a href="/privacy">Privacy Policy</a>.</p>' +
+      '<div class="cb-actions"><button type="button" class="cb-accept">Accept</button><button type="button" class="cb-decline">Decline</button></div>';
+    document.body.appendChild(b);
+    b.querySelector('.cb-accept').addEventListener('click', function () {
+      setChoice('granted');
+      if (window.ivtLoadGA) window.ivtLoadGA();
+      b.remove();
+    });
+    b.querySelector('.cb-decline').addEventListener('click', function () {
+      setChoice('denied');
+      b.remove();
+    });
+  }
+  if (!getChoice()) showBanner();
+  var fb = document.querySelector('.footer-bottom');
+  if (fb) {
+    var a = document.createElement('a');
+    a.href = '#';
+    a.textContent = 'Cookie Settings';
+    a.style.textDecoration = 'underline';
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem(KEY); } catch (err) {}
+      showBanner();
+    });
+    fb.appendChild(a);
+  }
+})();

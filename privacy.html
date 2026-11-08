@@ -13,13 +13,21 @@
   <meta property="og:url" content="https://www.ivtmedical.com/privacy">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <!-- Google tag (gtag.js): loads only after analytics consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
+    window.ivtLoadGA = function () {
+      if (window.ivtGALoaded) return;
+      window.ivtGALoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F';
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('ivt-analytics-consent') === 'granted') window.ivtLoadGA(); } catch (e) {}
   </script>
 </head>
 <body>
@@ -76,7 +84,7 @@
     </ul>
 
     <h2 style="margin:40px 0 16px">Your choices about analytics</h2>
-    <p style="color:var(--slate)">You can block or delete analytics cookies at any time through your browser settings, or opt out of Google Analytics across all websites using <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--red); font-weight:800">Google's opt-out browser add-on</a>. The website remains fully functional without these cookies.</p>
+    <p style="color:var(--slate)">Google Analytics runs only after you choose "Accept" in the cookie consent banner shown on your first visit; if you decline, no analytics cookies are set. You can change your choice at any time using the "Cookie Settings" link at the bottom of every page, block or delete cookies through your browser settings, or opt out of Google Analytics across all websites using <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--red); font-weight:800">Google's opt-out browser add-on</a>. The website remains fully functional without these cookies.</p>
 
     <h2 style="margin:40px 0 16px">How we use your information</h2>
     <p style="color:var(--slate)">Details submitted through the contact form are used solely to respond to your inquiry, provide requested materials (such as brochures or technical documentation) and follow up on your request. Form submissions are delivered to us by our hosting provider (Netlify) and stored securely.</p>
@@ -100,7 +108,7 @@
     <div dir="rtl" lang="he">
       <h2 style="margin-bottom:16px">מדיניות פרטיות</h2>
       <p style="color:var(--slate)">חברת IVT Medical בע"מ מכבדת את פרטיות המבקרים באתר. הפרטים שאתם בוחרים למסור בטפסי האתר (שם, דוא"ל, טלפון והודעה) משמשים אך ורק למענה לפנייתכם. איננו משתמשים בעוגיות פרסום, איננו מוכרים מידע אישי לגורם שלישי, ואיננו שולחים דיוור שיווקי ללא הסכמה.</p>
-      <p style="color:var(--slate); margin-top:12px">לצורך הבנת השימוש באתר אנו משתמשים בשני כלי מדידה: Cloudflare Web Analytics, שאינו עושה שימוש בעוגיות ואינו מזהה מבקרים, ו-Google Analytics 4, שעושה שימוש בעוגיות אנליטיות ואוסף נתוני שימוש (כגון עמודים שנצפו ומשך הביקור) כמפורט במדיניות הפרטיות של Google. אנו עושים שימוש בנתונים אלה באופן מצטבר בלבד. ניתן לחסום או למחוק עוגיות אנליטיות בכל עת דרך הגדרות הדפדפן, או לבטל את מדידת Google Analytics באמצעות <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--red); font-weight:800">תוסף ביטול ההסכמה של Google</a>. האתר מתפקד באופן מלא גם ללא עוגיות אלה.</p>
+      <p style="color:var(--slate); margin-top:12px">לצורך הבנת השימוש באתר אנו משתמשים בשני כלי מדידה: Cloudflare Web Analytics, שאינו עושה שימוש בעוגיות ואינו מזהה מבקרים, ו-Google Analytics 4, שעושה שימוש בעוגיות אנליטיות ואוסף נתוני שימוש (כגון עמודים שנצפו ומשך הביקור) כמפורט במדיניות הפרטיות של Google. אנו עושים שימוש בנתונים אלה באופן מצטבר בלבד. מדידת Google Analytics מופעלת רק לאחר אישורכם בבאנר ההסכמה המוצג בביקור הראשון; בחירה ב"דחייה" מונעת הצבת עוגיות אנליטיות. ניתן לשנות את הבחירה בכל עת דרך קישור "Cookie Settings" בתחתית כל עמוד, לחסום או למחוק עוגיות דרך הגדרות הדפדפן, או לבטל את המדידה באמצעות <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--red); font-weight:800">תוסף ביטול ההסכמה של Google</a>. האתר מתפקד באופן מלא גם ללא עוגיות אלה.</p>
       <p style="color:var(--slate); margin-top:12px">בכל שאלה, בקשת עיון, תיקון או מחיקה של מידע אישי, ניתן לפנות אלינו בדוא"ל <a href="mailto:info@ivtmedical.com" style="color:var(--red); font-weight:800">info@ivtmedical.com</a> או בטלפון 09-7463737.</p>
       <p style="color:var(--mist); font-size:14px; margin-top:20px">עודכן לאחרונה: אוגוסט 2026.</p>
     </div>

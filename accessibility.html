@@ -13,13 +13,21 @@
   <meta property="og:url" content="https://www.ivtmedical.com/accessibility">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F"></script>
+  <!-- Google tag (gtag.js): loads only after analytics consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Y4CPHRTG0F');
+    window.ivtLoadGA = function () {
+      if (window.ivtGALoaded) return;
+      window.ivtGALoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4CPHRTG0F';
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('ivt-analytics-consent') === 'granted') window.ivtLoadGA(); } catch (e) {}
   </script>
 </head>
 <body>

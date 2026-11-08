@@ -521,3 +521,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    horizontal overflow on narrow screens; let form controls shrink with their grid cell */
 .form-field { min-width: 0; }
 .form-field input, .form-field textarea, .form-field select { width: 100%; min-width: 0; box-sizing: border-box; }
+
+/* ---------- Analytics consent banner ---------- */
+#cookie-banner {
+  position: fixed; left: 18px; bottom: 18px; z-index: 2000; max-width: 370px;
+  background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: var(--shadow-lg); padding: 18px 20px;
+}
+#cookie-banner p { font-size: 13.5px; line-height: 1.55; color: var(--slate); margin-bottom: 12px; }
+#cookie-banner a { color: var(--red); font-weight: 700; }
+.cb-actions { display: flex; gap: 10px; }
+.cb-actions button {
+  font-family: var(--font); font-weight: 800; font-size: 13.5px;
+  padding: 9px 20px; border-radius: 999px; cursor: pointer; border: 0;
+  transition: transform .2s, box-shadow .2s;
+}
+.cb-actions button:hover { transform: translateY(-1px); }
+.cb-accept { background: var(--navy); color: #fff; }
+.cb-decline { background: var(--paper-2); color: var(--navy); }
+@media (max-width: 480px) {
+  #cookie-banner { left: 12px; right: 12px; max-width: none; bottom: 92px; }
+}
