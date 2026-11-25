@@ -26,14 +26,6 @@
     .fset-title { font-size: 20px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
     .fset-note { font-size: 13.5px; color: var(--slate); margin: -12px 0 20px; }
     .hint { font-size: 12.5px; font-weight: 600; color: var(--mist); }
-    .items { display: flex; flex-direction: column; gap: 12px; }
-    .item-row { display: grid; grid-template-columns: 1fr 112px; gap: 14px; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 13px 16px; }
-    .item-name { font-weight: 700; color: var(--navy); font-size: 15px; line-height: 1.35; min-width: 0; }
-    .item-code { display: block; font-weight: 600; font-size: 12.5px; color: var(--mist); letter-spacing: .02em; }
-    .item-row input { width: 100%; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font-family: var(--font); font-size: 15px; background: #fff; color: var(--ink); text-align: center; font-variant-numeric: tabular-nums; }
-    .item-row input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(225, 37, 27, .12); }
-    .qty-head { display: grid; grid-template-columns: 1fr 112px; gap: 14px; padding: 0 16px 8px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--mist); }
-    .qty-head span:last-child { text-align: center; }
     .consent { display: flex; gap: 12px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 22px; }
     .consent input { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 2px; accent-color: var(--red); }
     .consent label { font-size: 13.5px; color: var(--slate); line-height: 1.55; }
@@ -44,7 +36,6 @@
     .step span { font-size: 13.5px; color: var(--slate); line-height: 1.5; }
     @media (max-width: 760px) {
       .steps { grid-template-columns: 1fr; gap: 12px; }
-      .item-row, .qty-head { grid-template-columns: 1fr 88px; }
       .form-card { padding: 28px 20px; }
     }
   </style>
@@ -104,7 +95,7 @@
   <div class="container order-form">
 
     <div class="steps reveal">
-      <div class="step"><b>1. You fill this in</b><span>Contact, delivery address, invoicing details and the items you need.</span></div>
+      <div class="step"><b>1. You fill this in</b><span>Your contact details, the delivery address and the invoicing details.</span></div>
       <div class="step"><b>2. We send a proforma invoice</b><span>With prices, shipping cost and payment details, for your approval.</span></div>
       <div class="step"><b>3. We ship</b><span>Once payment is confirmed, with tracking sent to your email.</span></div>
     </div>
@@ -197,43 +188,9 @@
         </div>
       </fieldset>
 
-      <fieldset class="fset">
-        <legend><div class="fset-head"><span class="fset-num">04</span><span class="fset-title">What you would like to order</span></div></legend>
-        <p class="fset-note">Enter a quantity next to the items you need and leave the rest empty.</p>
-        <div class="qty-head"><span>Item</span><span>Quantity</span></div>
-        <div class="items">
-          <div class="item-row">
-            <div class="item-name">TopClosure® 1S Clinic Pack<span class="item-code">Single patient pack</span></div>
-            <input id="o-qty-1s" name="qty_topclosure_1s" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Quantity of TopClosure 1S Clinic Pack">
-          </div>
-          <div class="item-row">
-            <div class="item-name">TopClosure® 3S System<span class="item-code">SBL8-GI</span></div>
-            <input id="o-qty-3s" name="qty_topclosure_3s" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Quantity of TopClosure 3S System">
-          </div>
-          <div class="item-row">
-            <div class="item-name">TopBase™ adhesive base<span class="item-code">TB1010 single, or TB10-GI box of 10</span></div>
-            <input id="o-qty-topbase" name="qty_topbase" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Quantity of TopBase adhesive base">
-          </div>
-          <div class="item-row">
-            <div class="item-name">Drape strips<span class="item-code">ACC-10DRS</span></div>
-            <input id="o-qty-drape" name="qty_drape_strips" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Quantity of drape strips">
-          </div>
-          <div class="item-row">
-            <div class="item-name">Wound dressing kit<span class="item-code">SWDK1520</span></div>
-            <input id="o-qty-dressing" name="qty_wound_dressing_kit" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Quantity of wound dressing kit">
-          </div>
-        </div>
-        <div class="form-grid" style="margin-top:18px">
-          <div class="form-field full">
-            <label for="o-other-items">Other items, sizes or accessories</label>
-            <textarea id="o-other-items" name="other_items" style="min-height:90px" placeholder="Write the item and the quantity. If you are not sure which item fits your case, describe it and we will advise."></textarea>
-          </div>
-        </div>
-        <p class="fset-note" style="margin:16px 0 0">Vcare α® and MeCare α® negative pressure systems are supplied to healthcare professionals and facilities. Add them under other items and our team will follow up with you directly.</p>
-      </fieldset>
 
       <fieldset class="fset">
-        <legend><div class="fset-head"><span class="fset-num">05</span><span class="fset-title">Shipping and anything else</span></div></legend>
+        <legend><div class="fset-head"><span class="fset-num">04</span><span class="fset-title">Shipping and anything else</span></div></legend>
         <div class="form-grid">
           <div class="form-field">
             <label for="o-shipping">Preferred shipping</label>
