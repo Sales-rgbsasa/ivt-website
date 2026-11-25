@@ -43,3 +43,5 @@ http://en.ivtmedical.com/*      https://www.ivtmedical.com/:splat               
 /privacy.html   /privacy   301!
 /distributors.html   /distributors   301!
 /terms.html   /terms   301!
+/order.html   /order   301!
+/order-received.html   /order-received   301!
